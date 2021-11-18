@@ -5,6 +5,8 @@ let addBtn = document.getElementById('addBtn'); //Submit button
 
 addBtn.addEventListener('click', function (e) {
     let addText = document.getElementById('addTxt'); //Text Area
+    let addTitle = document.getElementById('addTitle'); //Title
+
     let notes = localStorage.getItem('notes');
     if (notes == null) {
         notesObj = [];
@@ -13,7 +15,11 @@ addBtn.addEventListener('click', function (e) {
         notesObj = JSON.parse(notes);
     }
 
-    notesObj.push(addText.value); //TextArea Value
+    let obj={
+        title: addTitle.value,
+        message: addText.value
+    }
+    notesObj.push(obj); //TextArea Value
     localStorage.setItem('notes', JSON.stringify(notesObj)); //Save valu as a string in LocalStorage
     addText.value = ''; //remove textArea text after click on submit btn
     // console.log(notesObj);
@@ -34,8 +40,8 @@ function showNotes() {
         html += `
         <div class="noteCard card my-2 mx-2" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Note ${index + 1}</h5>
-                <p class="card-text">${element}</p>
+                <h5 class="card-title">${element.title}</h5>
+                <p class="card-text">${element.message}</p>
                 <button id="${index}" onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</button>
             </div>
         </div>`;
