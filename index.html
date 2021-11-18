@@ -30,7 +30,8 @@
 
                 </ul>
                 <form class="d-flex">
-                    <input id="searchTxt" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <input id="searchTxt" class="form-control me-2" type="search" placeholder="Search"
+                        aria-label="Search">
                     <button class="btn btn-outline-primary" type="submit">Search</button>
                 </form>
             </div>
@@ -41,9 +42,14 @@
         <h1>Welcome to Magic Notes</h1>
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Add a Note</h5>
                 <div class="mb-3">
-                    <textarea class="form-control" id="addTxt" rows="3"></textarea>
+                <h5 class="card-title">Note title</h5>
+                    <input type="text" class="form-control" id="addTitle"
+                        placeholder="Title">
+                </div>
+                <h5 class="card-title">Add a note</h5>
+                <div class="mb-3">
+                    <textarea class="form-control" id="addTxt" rows="3" placeholder="Message"></textarea>
                 </div>
                 <button class="btn btn-primary" id="addBtn">Add Note</button>
             </div>
@@ -52,7 +58,7 @@
         <h2>Your Notes</h2>
         <hr>
         <div id="notes" class="row container-fluid">
-            <!-- Populate with javaScript  -->
+
         </div>
     </div>
     <!-- Option 1: Bootstrap Bundle with Popper -->
