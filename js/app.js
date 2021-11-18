@@ -22,6 +22,7 @@ addBtn.addEventListener('click', function (e) {
     notesObj.push(obj); //TextArea Value
     localStorage.setItem('notes', JSON.stringify(notesObj)); //Save valu as a string in LocalStorage
     addText.value = ''; //remove textArea text after click on submit btn
+    addTitle.value = ''; //remove textArea text after click on submit btn
     // console.log(notesObj);
     showNotes();
 })
